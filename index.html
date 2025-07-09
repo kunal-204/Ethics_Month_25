@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ethics Month 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      overflow-x: hidden;
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Centered Top Header */
+    .top-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+      background: rgba(15, 32, 39, 0.7);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to right, #ff8a00, #e52e71);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: glow 2s ease-in-out infinite alternate;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    /* Tata Steel Logo */
+    .corner-logo {
+      position: fixed;
+      top: 20px;
+      height: 50px;
+      width: auto;
+      z-index: 110;
+      display: none; /* Hidden initially */
+    }
+
+    .logo-left {
+      left: 20px;
+    }
+
+    .logo-right {
+      right: 20px;
+    }
+
+    /* Welcome Container - Initial View */
+    .welcome-container {
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+      width: 90%;
+      margin: 0 auto;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Main Heading with Animation */
+    .main-heading {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(to right, #ff8a00, #e52e71);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1.5s ease-out forwards;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+    }
+
+    /* Subheading with Animation */
+    .subheading {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1.5s ease-out 0.5s forwards;
+      color: #ffffff;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+      position: relative;
+      line-height: 1.4;
+    }
+
+    .subheading::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(to right, transparent, #ff8a00, #e52e71, transparent);
+      border-radius: 3px;
+      animation: pulse 2s infinite;
+    }
+
+    /* Continue Button with Bubble Effect */
+    .continue-btn {
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      background: linear-gradient(45deg, #ff8a00, #e52e71);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      opacity: 0;
+      transform: scale(0.8);
+      animation: fadeInScale 1s ease-out 1s forwards;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      letter-spacing: 0.5px;
+    }
+
+    .continue-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .continue-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Bubble Effect */
+    .continue-btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0;
+      transition: transform 0.5s, opacity 0.5s;
+    }
+
+    .continue-btn:hover::before {
+      transform: translate(-50%, -50%) scale(20);
+      opacity: 1;
+      transition: transform 0.8s, opacity 0.8s;
+    }
+
+    .continue-btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #e52e71, #ff8a00);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .continue-btn:hover::after {
+      opacity: 1;
+    }
+
+    /* Menu Section - Hidden Initially */
+    .menu-section {
+      display: none;
+      width: 100%;
+      padding: 120px 20px 80px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      z-index: 1;
+    }
+
+    .menu button {
+      position: relative;
+      width: 200px;
+      height: 100px;
+      padding: 16px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #0072ce, #005fa3);
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .menu button::after {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: rgba(255, 255, 255, 0.2);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      border-radius: 50%;
+      pointer-events: none;
+      transition: transform 0.4s ease;
+    }
+
+    .menu button:hover::after {
+      transform: translate(-50%, -50%) scale(1.8);
+    }
+
+    .menu button:hover {
+      transform: translateY(-3px) scale(1.03);
+      background: linear-gradient(135deg, #005fa3, #003f7f);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Modal Styles */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+      color: #333;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-content video {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
+    }
+
+    /* Quiz Styles */
+    .quiz-container {
+      display: block;
+    }
+
+    .quiz-question {
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .quiz-options {
+      margin-bottom: 25px;
+    }
+
+    .quiz-option {
+      display: block;
+      margin: 10px 0;
+      padding: 10px 15px;
+      background: #f5f5f5;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .quiz-option:hover {
+      background: #e0e0e0;
+    }
+
+    .quiz-option.selected {
+      background: #0072ce;
+      color: white;
+    }
+
+    .quiz-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .quiz-btn {
+      padding: 8px 20px;
+      background: #0072ce;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .quiz-btn:disabled {
+      background: #cccccc;
+      cursor: not-allowed;
+    }
+
+    .quiz-result {
+      text-align: center;
+      display: block;
+    }
+
+    .quiz-result h3 {
+      margin-bottom: 15px;
+      color: #0072ce;
+    }
+
+    .quiz-result p {
+      margin-bottom: 10px;
+    }
+
+    .leaderboard {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    .leaderboard th, .leaderboard td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .leaderboard th {
+      background-color: #0072ce;
+      color: white;
+    }
+
+    .leaderboard tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .leaderboard tr:hover {
+      background-color: #e6e6e6;
+    }
+
+    .current-user {
+      background-color: #ffeb3b !important;
+      color: #000 !important;
+      font-weight: bold;
+    }
+
+    .user-id-input {
+      margin-bottom: 20px;
+    }
+
+    .user-id-input input {
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .user-id-input button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #0072ce;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: 5px;
+      display: none;
+    }
+
+    /* Footer */
+    .footer-dev {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1rem;
+      font-weight: 500;
+      color: #ffffff;
+      z-index: 50;
+      background: rgba(0, 94, 184, 0.8);
+      padding: 10px 20px;
+      border-radius: 30px;
+      box-shadow: 0 0 10px rgba(0,114,206,0.6);
+      animation: glow 3s infinite alternate;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer-dev span {
+      color: #ffe600;
+      font-weight: 700;
+      text-shadow: 0 0 5px #ffe600;
+    }
+
+    /* Particles Effects */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.6);
+      animation: float linear infinite;
+    }
+
+    .top-particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20vh;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .top-particle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.4);
+      animation: floatDown linear infinite;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInScale {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(20px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes floatDown {
+      0% {
+        transform: translateY(-20px) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(20vh) translateX(10px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px rgba(255, 138, 0, 0.5);
+      }
+      to {
+        text-shadow: 0 0 15px rgba(255, 138, 0, 0.8), 0 0 20px rgba(229, 46, 113, 0.6);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0.5;
+        width: 100px;
+      }
+      50% {
+        opacity: 1;
+        width: 150px;
+      }
+      100% {
+        opacity: 0.5;
+        width: 100px;
+      }
+    }
+
+    @keyframes ripple {
+      to {
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .main-heading {
+        font-size: 2.5rem;
+      }
+      
+      .subheading {
+        font-size: 1.5rem;
+      }
+      
+      .continue-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+      }
+
+      .menu button {
+        width: 90%;
+        height: 90px;
+        font-size: 0.95rem;
+      }
+
+      .footer-dev {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+      }
+
+      .corner-logo {
+        height: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .main-heading {
+        font-size: 2rem;
+      }
+      
+      .subheading {
+        font-size: 1.2rem;
+      }
+
+      .menu-section {
+        padding-top: 100px;
+      }
+
+      .corner-logo {
+        height: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-header">
+    <div class="logo">ETHICS MONTH '25</div>
+  </div>
+
+  <!-- Tata Steel Logos (hidden initially) 
+  <img src="tata-steel-logo.png" alt="Tata Steel Logo" class="corner-logo logo-left">
+  <img src="tata-steel-logo.png" alt="Tata Steel Logo" class="corner-logo logo-right">-->
+
+  <div class="top-particles" id="topParticles"></div>
+  <div class="particles" id="particles"></div>
+  
+  <!-- Initial Welcome View -->
+  <div class="welcome-container" id="welcomeContainer">
+    <h1 class="main-heading">ONE CODE ONE COMMITMENT</h1>
+    <h2 class="subheading">I blast furnace welcomes you to Ethics Month '25</h2>
+    <button class="continue-btn" id="continueBtn">Continue</button>
+  </div>
+
+  <!-- Menu Section - Hidden Initially -->
+  <div class="menu-section" id="menuSection">
+    <div class="menu">
+      <button onclick="openModal(`<video controls src='ceo-message.mp4'></video>`)">Message from Leadership</button>
+      <button onclick="openModal(`<div><h3>Ethics Team Structure</h3><ul><li>Chief Ethics Officer<ul><li>Regional Ethics Head<ul><li>Local Ethics Officer</li></ul></li></ul></li></ul></div>`)">Our Ethics Team</button>
+      <button onclick="openModal('<video controls src=\'sample-video.mp4\'></video>')">Video Wall</button>
+      <button onclick="startEthicalDilemma()">Ethical Dilemma</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" id="modalContent">
+      <span class="close-btn" onclick="closeModal(event)">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div class="footer-dev">
+    <p>Designed & Developed by <span>Kunal Kumar</span></p>
+  </div>
+
+  <script>
+    // Quiz questions
+    const quizQuestions = [
+      {
+        question: "1. You discover a colleague is taking office supplies home for personal use. What should you do?",
+        options: [
+          "Ignore it as it's just small items",
+          "Report it to your supervisor or ethics hotline",
+          "Confront the colleague directly",
+          "Start taking supplies home yourself"
+        ],
+        correctAnswer: 1
+      },
+      {
+        question: "2. A vendor offers you tickets to a sporting event in exchange for favorable treatment. How do you respond?",
+        options: [
+          "Accept the tickets as a gesture of goodwill",
+          "Decline politely and report the offer to your ethics officer",
+          "Accept but promise nothing in return",
+          "Ask for cash instead"
+        ],
+        correctAnswer: 1
+      },
+      {
+        question: "3. You accidentally receive confidential information not intended for you. What's the ethical action?",
+        options: [
+          "Read it and then delete it",
+          "Share it with your team for discussion",
+          "Notify the sender and delete/destroy the information",
+          "Use it to your advantage"
+        ],
+        correctAnswer: 2
+      },
+      {
+        question: "4. Your manager asks you to falsify a report to meet targets. What do you do?",
+        options: [
+          "Comply to avoid conflict",
+          "Refuse and report the request to HR or ethics hotline",
+          "Do it but keep evidence to protect yourself",
+          "Ask for a raise in exchange"
+        ],
+        correctAnswer: 1
+      },
+      {
+        question: "5. You witness harassment in the workplace. What's the right course of action?",
+        options: [
+          "Ignore it as it's not your business",
+          "Report it to HR or your supervisor",
+          "Join in to fit in with the group",
+          "Record it and post on social media"
+        ],
+        correctAnswer: 1
+      }
+    ];
+
+    // Quiz state variables
+    let currentQuestion = 0;
+    let userAnswers = [];
+    let userId = null;
+    let quizStarted = false;
+
+    // Create top particles
+    function createTopParticles() {
+      const topParticlesContainer = document.getElementById('topParticles');
+      const particleCount = window.innerWidth < 768 ? 20 : 30;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('top-particle');
+        
+        // Random position at top of screen
+        particle.style.left = `${Math.random() * 100}vw`;
+        particle.style.top = `-10px`;
+        
+        // Random size
+        const size = Math.random() * 3 + 2;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        // Random animation duration and delay
+        const duration = Math.random() * 8 + 4;
+        const delay = Math.random() * 3;
+        particle.style.animationDuration = `${duration}s`;
+        particle.style.animationDelay = `${delay}s`;
+        
+        // Random color variation
+        const hue = Math.random() * 60 + 30; // Yellow to orange range
+        particle.style.backgroundColor = `hsla(${hue}, 100%, 80%, 0.7)`;
+        
+        topParticlesContainer.appendChild(particle);
+      }
+    }
+
+    // Create bottom particles (light bees)
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = window.innerWidth < 768 ? 30 : 50;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Random position at bottom of screen
+        particle.style.left = `${Math.random() * 100}vw`;
+        particle.style.bottom = `-10px`;
+        
+        // Random size
+        const size = Math.random() * 5 + 3;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        // Random animation duration and delay
+        const duration = Math.random() * 10 + 5;
+        const delay = Math.random() * 5;
+        particle.style.animationDuration = `${duration}s`;
+        particle.style.animationDelay = `${delay}s`;
+        
+        // Random color variation
+        const hue = Math.random() * 60 + 30; // Yellow to orange range
+        particle.style.backgroundColor = `hsla(${hue}, 100%, 70%, 0.8)`;
+        
+        particlesContainer.appendChild(particle);
+      }
+    }
+    
+    // Initialize particles when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      createTopParticles();
+      createParticles();
+      
+      // Continue button functionality
+      document.getElementById('continueBtn').addEventListener('click', () => {
+        // Hide welcome container and show menu section
+        document.getElementById('welcomeContainer').style.display = 'none';
+        document.getElementById('menuSection').style.display = 'block';
+        
+        // Show Tata Steel logos
+        document.querySelectorAll('.corner-logo').forEach(logo => {
+          logo.style.display = 'block';
+        });
+        
+        // Create ripple effect
+        const ripple = document.createElement('div');
+        ripple.style.position = 'fixed';
+        ripple.style.borderRadius = '50%';
+        ripple.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+        ripple.style.transform = 'scale(0)';
+        ripple.style.animation = 'ripple 0.6s linear';
+        ripple.style.pointerEvents = 'none';
+        
+        // Get button position
+        const button = document.getElementById('continueBtn');
+        const rect = button.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height) * 2;
+        
+        ripple.style.width = `${size}px`;
+        ripple.style.height = `${size}px`;
+        ripple.style.left = `${rect.left + rect.width/2 - size/2}px`;
+        ripple.style.top = `${rect.top + rect.height/2 - size/2}px`;
+        
+        document.body.appendChild(ripple);
+        
+        // Remove ripple after animation
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+
+    // Modal functions
+    function openModal(content) {
+      const modal = document.getElementById("modal");
+      const modalBody = document.getElementById("modalBody");
+      modalBody.innerHTML = content;
+      modal.style.display = "flex";
+    }
+
+    function closeModal(event) {
+      if (event.target.classList.contains("modal") || event.target.classList.contains("close-btn")) {
+        document.getElementById("modal").style.display = "none";
+      }
+    }
+
+    // Recreate particles on window resize
+    window.addEventListener('resize', () => {
+      const topParticlesContainer = document.getElementById('topParticles');
+      const particlesContainer = document.getElementById('particles');
+      topParticlesContainer.innerHTML = '';
+      particlesContainer.innerHTML = '';
+      createTopParticles();
+      createParticles();
+    });
+
+    // Ethical Dilemma Quiz Functions
+    function startEthicalDilemma() {
+      // Reset quiz state
+      currentQuestion = 0;
+      userAnswers = [];
+      quizStarted = false;
+      
+      // Show user ID input form
+      const modalBody = document.getElementById("modalBody");
+      modalBody.innerHTML = `
+        <div class="user-id-input">
+          <h3>Ethical Dilemma Quiz</h3>
+          <p>Please enter your 6-digit employee ID to begin:</p>
+          <input type="text" id="userIdInput" placeholder="Enter your 6-digit ID" 
+                 pattern="[0-9]{6}" inputmode="numeric" maxlength="6">
+          <div class="error-message" id="errorMessage">Please enter a valid 6-digit ID</div>
+          <button onclick="validateUserId()">Continue</button>
+        </div>
+      `;
+      
+      openModal(modalBody.innerHTML);
+      
+      // Add input validation
+      const userIdInput = document.getElementById("userIdInput");
+      userIdInput.addEventListener('input', function() {
+        // Only allow numbers and limit to 6 digits
+        this.value = this.value.replace(/[^0-9]/g, '');
+        if (this.value.length > 6) {
+          this.value = this.value.slice(0, 6);
+        }
+      });
+    }
+
+    function validateUserId() {
+      const userIdInput = document.getElementById("userIdInput");
+      const errorMessage = document.getElementById("errorMessage");
+      
+      // Check if input is exactly 6 digits
+      if (userIdInput.value.length !== 6 || !/^\d{6}$/.test(userIdInput.value)) {
+        errorMessage.style.display = 'block';
+        return;
+      }
+      
+      errorMessage.style.display = 'none';
+      userId = userIdInput.value;
+      
+      // Check if user already exists in leaderboard
+      const leaderboard = getLeaderboard();
+      const existingUser = leaderboard.find(entry => entry.userId === userId);
+      
+      if (existingUser) {
+        // User exists - show leaderboard directly
+        showLeaderboardOnly(userId);
+      } else {
+        // New user - start quiz
+        quizStarted = true;
+        showQuestion();
+      }
+    }
+
+    // New function to show leaderboard only
+    function showLeaderboardOnly(userId) {
+      const leaderboard = getLeaderboard();
+      const userEntry = leaderboard.find(entry => entry.userId === userId);
+      
+      // Generate leaderboard HTML
+      let leaderboardHtml = '<tr><th>Rank</th><th>User ID</th><th>Score</th></tr>';
+      leaderboard.forEach((entry, index) => {
+        // Highlight current user's entry
+        const isCurrentUser = entry.userId === userId;
+        const rowClass = isCurrentUser ? 'class="current-user"' : '';
+        
+        leaderboardHtml += `
+          <tr ${rowClass}>
+            <td>${index + 1}</td>
+            <td>${entry.userId}</td>
+            <td>${entry.score}/${quizQuestions.length}</td>
+          </tr>
+        `;
+      });
+      
+      // Show leaderboard with message
+      const modalBody = document.getElementById("modalBody");
+      modalBody.innerHTML = `
+        <div class="quiz-result">
+          <h3>Welcome Back!</h3>
+          <p>Your previous score is already recorded in the leaderboard.</p>
+          <p>You can only take the quiz once per ID.</p>
+          
+          <h3 style="margin-top: 30px;">Leaderboard</h3>
+          <table class="leaderboard">
+            ${leaderboardHtml}
+          </table>
+        </div>
+      `;
+    }
+
+    function showQuestion() {
+      if (currentQuestion >= quizQuestions.length) {
+        showResults();
+        return;
+      }
+      
+      const question = quizQuestions[currentQuestion];
+      let optionsHtml = '';
+      
+      question.options.forEach((option, index) => {
+        optionsHtml += `
+          <div class="quiz-option" onclick="selectOption(${index})">
+            ${option}
+          </div>
+        `;
+      });
+      
+      const modalBody = document.getElementById("modalBody");
+      modalBody.innerHTML = `
+        <div class="quiz-container">
+          <div class="quiz-question">${question.question}</div>
+          <div class="quiz-options">${optionsHtml}</div>
+          <div class="quiz-nav">
+            <button class="quiz-btn" onclick="prevQuestion()" ${currentQuestion === 0 ? 'disabled' : ''}>Previous</button>
+            <button class="quiz-btn" onclick="nextQuestion()" ${userAnswers[currentQuestion] === undefined ? 'disabled' : ''}>${currentQuestion === quizQuestions.length - 1 ? 'Submit' : 'Next'}</button>
+          </div>
+        </div>
+      `;
+      
+      // Highlight previously selected answer if exists
+      if (userAnswers[currentQuestion] !== undefined) {
+        const options = document.querySelectorAll('.quiz-option');
+        options[userAnswers[currentQuestion]].classList.add('selected');
+      }
+    }
+
+    function selectOption(optionIndex) {
+      // Remove selected class from all options
+      const options = document.querySelectorAll('.quiz-option');
+      options.forEach(opt => opt.classList.remove('selected'));
+      
+      // Add selected class to clicked option
+      options[optionIndex].classList.add('selected');
+      
+      // Store user answer
+      userAnswers[currentQuestion] = optionIndex;
+      
+      // Enable next button
+      document.querySelector('.quiz-nav button:last-child').disabled = false;
+    }
+
+    function nextQuestion() {
+      if (currentQuestion < quizQuestions.length - 1) {
+        currentQuestion++;
+        showQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentQuestion > 0) {
+        currentQuestion--;
+        showQuestion();
+      }
+    }
+
+    function showResults() {
+      // Calculate score
+      let correctAnswers = 0;
+      userAnswers.forEach((answer, index) => {
+        if (answer === quizQuestions[index].correctAnswer) {
+          correctAnswers++;
+        }
+      });
+      
+      // Save to leaderboard
+      saveToLeaderboard(userId, correctAnswers);
+      
+      // Get leaderboard
+      const leaderboard = getLeaderboard();
+      
+      // Generate leaderboard HTML with current user highlighted
+      let leaderboardHtml = '<tr><th>Rank</th><th>User ID</th><th>Score</th></tr>';
+      leaderboard.forEach((entry, index) => {
+        const isCurrentUser = entry.userId === userId;
+        const rowClass = isCurrentUser ? 'class="current-user"' : '';
+        
+        leaderboardHtml += `
+          <tr ${rowClass}>
+            <td>${index + 1}</td>
+            <td>${entry.userId}</td>
+            <td>${entry.score}/${quizQuestions.length}</td>
+          </tr>
+        `;
+      });
+      
+      // Show results
+      const modalBody = document.getElementById("modalBody");
+      modalBody.innerHTML = `
+        <div class="quiz-result">
+          <h3>Quiz Results</h3>
+          <p>You scored ${correctAnswers} out of ${quizQuestions.length}</p>
+          <p>${getFeedbackMessage(correctAnswers, quizQuestions.length)}</p>
+          
+          <h3 style="margin-top: 30px;">Leaderboard</h3>
+          <table class="leaderboard">
+            ${leaderboardHtml}
+          </table>
+        </div>
+      `;
+    }
+
+    function getFeedbackMessage(score, total) {
+      const percentage = (score / total) * 100;
+      
+      if (percentage >= 80) {
+        return "Excellent! You have a strong understanding of corporate ethics.";
+      } else if (percentage >= 60) {
+        return "Good job! You understand most ethical principles but could improve in some areas.";
+      } else if (percentage >= 40) {
+        return "Fair. Consider reviewing the company's code of ethics for better understanding.";
+      } else {
+        return "Needs improvement. Please review the company's ethics policies and consider ethics training.";
+      }
+    }
+
+    function saveToLeaderboard(userId, score) {
+      let leaderboard = JSON.parse(localStorage.getItem('ethicsQuizLeaderboard')) || [];
+      
+      // Check if user already exists
+      const existingUserIndex = leaderboard.findIndex(entry => entry.userId === userId);
+      
+      if (existingUserIndex !== -1) {
+        // Update score if current score is higher
+        if (score > leaderboard[existingUserIndex].score) {
+          leaderboard[existingUserIndex].score = score;
+        }
+      } else {
+        // Add new entry
+        leaderboard.push({ userId, score });
+      }
+      
+      // Sort by score (descending)
+      leaderboard.sort((a, b) => b.score - a.score);
+      
+      // Keep only top 10
+      if (leaderboard.length > 10) {
+        leaderboard = leaderboard.slice(0, 10);
+      }
+      
+      // Save to localStorage
+      localStorage.setItem('ethicsQuizLeaderboard', JSON.stringify(leaderboard));
+    }
+
+    function getLeaderboard() {
+      return JSON.parse(localStorage.getItem('ethicsQuizLeaderboard')) || [];
+    }
+  </script>
+</body>
+</html>
