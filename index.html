@@ -57,7 +57,7 @@
       height: 50px;
       width: auto;
       z-index: 110;
-      display: none; /* Hidden initially */
+      display: none;
     }
 
     .logo-left {
@@ -160,7 +160,6 @@
       transform: scale(0.95);
     }
 
-    /* Bubble Effect */
     .continue-btn::before {
       content: '';
       position: absolute;
@@ -198,7 +197,7 @@
       opacity: 1;
     }
 
-    /* Menu Section - Hidden Initially */
+    /* Menu Section - Vertical Centered Layout */
     .menu-section {
       display: none;
       width: 100%;
@@ -209,8 +208,7 @@
 
     .menu {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       gap: 20px;
       width: 100%;
@@ -632,9 +630,9 @@
     <div class="logo">ETHICS MONTH '25</div>
   </div>
 
-  <!-- Tata Steel Logos (hidden initially) 
+  <!-- Tata Steel Logos (hidden initially) -->
   <img src="tata-steel-logo.png" alt="Tata Steel Logo" class="corner-logo logo-left">
-  <img src="tata-steel-logo.png" alt="Tata Steel Logo" class="corner-logo logo-right">-->
+  <img src="tata-steel-logo.png" alt="Tata Steel Logo" class="corner-logo logo-right">
 
   <div class="top-particles" id="topParticles"></div>
   <div class="particles" id="particles"></div>
@@ -642,11 +640,11 @@
   <!-- Initial Welcome View -->
   <div class="welcome-container" id="welcomeContainer">
     <h1 class="main-heading">ONE CODE ONE COMMITMENT</h1>
-    <h2 class="subheading">welcomes you to Ethics Month '25</h2>
+    <h2 class="subheading">I blast furnace welcomes you to Ethics Month '25</h2>
     <button class="continue-btn" id="continueBtn">Continue</button>
   </div>
 
-  <!-- Menu Section - Hidden Initially -->
+  <!-- Menu Section - Vertical Centered Buttons -->
   <div class="menu-section" id="menuSection">
     <div class="menu">
       <button onclick="openModal(`<video controls src='ceo-message.mp4'></video>`)">Message from Leadership</button>
@@ -665,7 +663,7 @@
   </div>
 
   <div class="footer-dev">
-    <p>Designed & Developed by <span>Kunal Kumar</span></p>
+    <p>Designed & Developed by <span>Aanchal Kunal singh</span></p>
   </div>
 
   <script>
